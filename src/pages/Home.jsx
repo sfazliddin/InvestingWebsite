@@ -1,3 +1,4 @@
+import { RegisterButton } from "../components/buttons";
 const Home = () => {
   return (
     <>
@@ -26,6 +27,10 @@ const Home = () => {
           use, making it suitable for traders of all levels.
         </li>
       </ul>
+
+      <h2>Start Your Investment Journey Today!</h2>
+      <h2>Get Started for Free</h2>
+      <RegisterButton />
     </>
   );
 };

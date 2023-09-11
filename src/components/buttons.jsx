@@ -9,13 +9,13 @@ const LoginButton = () => {
     </a>
   );
 };
-const SignupButton = () => {
+const RegisterButton = () => {
   return (
     <a href="/register">
       <button type="button" className="btn btn-primary">
-        Sign up
+        Register
       </button>
     </a>
   );
 };
-export { LoginButton, SignupButton };
+export { LoginButton, RegisterButton };
