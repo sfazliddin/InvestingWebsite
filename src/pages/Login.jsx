@@ -1,61 +1,67 @@
-import "bootstrap/dist/css/bootstrap.css";
+import React, { Fragment, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 
 const Login = () => {
   return (
-    <htmlForm>
-      <fieldset>
-        <div className="htmlForm-group row"></div>
-        <div className="htmlForm-group">
-          <label htmlFor="exampleInputEmail1" className="htmlForm-label mt-4">
-            Email address
-          </label>
-          <input
-            type="email"
-            className="htmlForm-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-        </div>
-        <div className="htmlForm-group">
-          <label
-            htmlFor="exampleInputPassword1"
-            className="htmlForm-label mt-4"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            className="htmlForm-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-            autoComplete="off"
-          />
-        </div>
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label className="form-check-label" htmlFor="flexCheckDefault">
-            Keep me logged in for up to 30 days
-          </label>
-        </div>
-        <div>
-          <a href="/forgotPassword">Forgot your password?</a>
-          <br />
-          <a href="/forgotEmail">Forgot your email address?</a>
-        </div>
+    <div className="d-flex justify-content-center flex-column">
+      <div className="col-12 text-center my-3">
+        <h1 className="my-3">
+          <strong>Invest IQ</strong> Login
+        </h1>
+      </div>
+      <div className="credentials bg-primary col-10 col-md-8 col-lg-6 rounded p-2 mx-auto mb-5">
+        <form>
+          <div className="form-floating p-1 mt-1">
+            <input
+              required
+              type="email"
+              className="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label htmlFor="floatingInput" className="ps-3">
+              Email
+            </label>
+            <div className="d-flex justify-content-center py-2">
+              <sub className="text-light">ex.John.Doe29@email.com</sub>
+            </div>
+          </div>
+          <div className="form-floating p-1">
+            <input
+              required
+              type="password"
+              className="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label htmlFor="floatingPassword" className="ps-3">
+              Password
+            </label>
+            <div className="d-flex justify-content-center py-2">
+              <sub className="text-light">ex.DoeJohn</sub>
+            </div>
+          </div>
+          <div className="buttonContainer mt-3 d-flex justify-content-center flex-column">
+            <button type="submit" className="btn btn-lg btn-dark col-6 mx-auto">
+              Login
+            </button>
 
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-      </fieldset>
-      <h3>or</h3>
-      <a href="/register">Create an account</a>
-    </htmlForm>
+            <div className="support-links m-3 mb-0 p-2 d-flex justify-content-center">
+              <Link to="/register" className="text-light">
+                Sign Up
+              </Link>
+              <span className="separator m-1">|</span>
+
+              <Link to="/changePassword" className="text-light">
+                Forgot Password
+              </Link>
+              <span className="separator m-1">|</span>
+            </div>
+          </div>
+        </form>
+      </div>
+      {/* <Credentials></Credentials> */}
+    </div>
   );
 };
 export default Login;

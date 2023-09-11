@@ -1,4 +1,5 @@
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootswatch/dist/zephyr/bootstrap.min.css";
+
 import { SignupButton, LoginButton } from "./buttons";
 
 const MyNavbar = () => {
@@ -6,7 +7,7 @@ const MyNavbar = () => {
     <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          Investor
+          <h1>Invest IQ</h1>
         </a>
         <button
           className="navbar-toggler"
@@ -22,7 +23,7 @@ const MyNavbar = () => {
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link active" href="/">
+              <a className="nav-link" href="/">
                 Home
                 <span className="visually-hidden">(current)</span>
               </a>
@@ -43,16 +44,6 @@ const MyNavbar = () => {
               </a>
             </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-sm-2"
-              type="search"
-              placeholder="Search"
-            />
-            <button className="btn btn-secondary my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
 
           <LoginButton />
           <SignupButton />
