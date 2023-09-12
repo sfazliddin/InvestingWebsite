@@ -8,20 +8,22 @@ import Stocks from "./pages/Stocks";
 import Crypto from "./pages/Crypto";
 import MyNavbar from "./components/navbar";
 import Support from "./pages/Support";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <>
       <MyNavbar />
-
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/stocks" element={<Stocks />} />
-        <Route path="/crypto" element={<Crypto />} />
-        <Route path="/support" element={<Support />} />
-      </Routes>
+      <Container>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/stocks" element={<Stocks />} />
+          <Route path="/crypto" element={<Crypto />} />
+          <Route path="/support" element={<Support />} />
+        </Routes>
+      </Container>
     </>
   );
 }

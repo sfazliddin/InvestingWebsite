@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [c_pass, setC_Pass] = useState("");
+  const [cPass, setCPass] = useState("");
   const [userName, setUserName] = useState("");
   // const [lastName, setLastName] = useState("");
 
@@ -17,9 +17,9 @@ const Register = () => {
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
-      const body = { userType, userName, email, pass, c_pass };
-      const matches = pass === c_pass;
-      matches ? alert("MATCHED") : alert("NO MATCH");
+      const body = { userType, userName, email, pass, c_pass: cPass };
+      const matches = pass === cPass;
+      matches ? alert("PASSWORD MATCHED") : alert("PASSWORD DOES NOT MATCH");
       const response = await fetch("/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -95,7 +95,7 @@ const Register = () => {
               id="comparePass"
               placeholder="Password"
               onChange={(e) => {
-                setC_Pass(e.target.value);
+                setCPass(e.target.value);
               }}
             />
             <label htmlFor="comparePass" className="ps-3">
