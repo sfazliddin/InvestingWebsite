@@ -1,6 +1,6 @@
 // import "bootswatch/dist/zephyr/bootstrap.min.css";
-
-import { SignupButton, LoginButton } from "./buttons";
+import "bootstrap/dist/js/bootstrap.bundle";
+import { RegisterButton, LoginButton } from "./buttons";
 
 const MyNavbar = () => {
   return (
@@ -46,7 +46,7 @@ const MyNavbar = () => {
           </ul>
 
           <LoginButton />
-          <SignupButton />
+          <RegisterButton />
         </div>
       </div>
     </nav>
