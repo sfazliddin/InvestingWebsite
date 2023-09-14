@@ -1,32 +1,47 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-// import "bootswatch/dist/zephyr/bootstrap.min.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [cPass, setCPass] = useState("");
   const [userName, setUserName] = useState("");
-  // const [lastName, setLastName] = useState("");
 
   useEffect(() => {
     console.log(email);
   }, [email]);
+  const makeUser = async () => {
+    console.log(email);
+    const url = "https://api-generator.retool.com/lQQWDe/user_info";
+    axios
+      .post(url, {
+        email: email,
+        username: userName,
+        password: pass,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    setEmail("");
+    setUserName("");
+    setPass("");
+  };
 
-  const userType = "investor";
+  const updateEmail = (e) => setEmail(e.target.value);
+  const updateUserName = (e) => setUserName(e.target.value);
+  const updatePassword = (e) => setPass(e.target.value);
+  let responseOutput = <></>;
 
-  const onSubmitForm = async (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     try {
-      const body = { userType, userName, email, pass, c_pass: cPass };
       const matches = pass === cPass;
-      matches ? alert("PASSWORD MATCHED") : alert("PASSWORD DOES NOT MATCH");
-      const response = await fetch("/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      console.log(response);
+      matches
+        ? makeUser() && alert("PASSWORD MATCHES")
+        : alert("PASSWORD DOES NOT MATCH");
     } catch (err) {
       console.error(err.message);
     }
@@ -39,7 +54,8 @@ const Register = () => {
           <strong>Invest IQ</strong> Sign up
         </h1>
       </div>
-      <form onSubmit={onSubmitForm}>
+      <form onSubmit={submit}>
+        {responseOutput}
         <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
           <div className="form-floating p-1 my-1">
             <input
@@ -48,9 +64,8 @@ const Register = () => {
               className="form-control"
               id="email"
               placeholder="name@example.com"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              value={email}
+              onChange={updateEmail}
             />
             <label htmlFor="email" className="ps-3">
               Email
@@ -63,9 +78,8 @@ const Register = () => {
               className="form-control"
               id="userName"
               placeholder="userName"
-              onChange={(e) => {
-                setUserName(e.target.value);
-              }}
+              value={userName}
+              onChange={updateUserName}
             />
             <label htmlFor="userName" className="ps-3">
               User Name
@@ -79,9 +93,8 @@ const Register = () => {
               className="form-control"
               id="pass"
               placeholder="Password"
-              onChange={(e) => {
-                setPass(e.target.value);
-              }}
+              value={pass}
+              onChange={updatePassword}
             />
             <label htmlFor="pass" className="ps-3">
               Password

@@ -30,7 +30,33 @@ const ApiComponent = () => {
       )}
       {!error && !loading && (
         <>
-          Users:
+          {/* <h3>Add a user:</h3>
+          <form action="addUser" onSubmit={submit}>
+            {responseOutput}
+            <input
+              required
+              type="email"
+              placeholder="email"
+              value={email}
+              onChange={updateEmail}
+            />
+            <input
+              required
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={updateUserName}
+            />
+            <input
+              required
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={updatePassword}
+            />
+            <input type="submit" />
+          </form> */}
+          <h1> Users:</h1>
           {userInfo.map(({ id, email, username, password }) => {
             return (
               <div key={id}>
