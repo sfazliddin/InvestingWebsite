@@ -1,10 +1,15 @@
-import ApiComponent from "../components/Api";
+import { GetInfo, CreateAccount } from "../components/ApiCalls";
 
 const Support = () => {
   return (
     <>
       <div>support page</div>
-      <ApiComponent />
+      {/* <button className="rounded-full bg-red-600 p-3" onClick={Delete()}>
+        DELETE ACCOUNT
+      </button> */}
+
+      <CreateAccount />
+      <GetInfo />
     </>
   );
 };

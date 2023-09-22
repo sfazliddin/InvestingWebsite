@@ -29,7 +29,7 @@ const Register = () => {
     setUserName("");
     setPass("");
   };
-
+  console.log(email);
   const updateEmail = (e) => setEmail(e.target.value);
   const updateUserName = (e) => setUserName(e.target.value);
   const updatePassword = (e) => setPass(e.target.value);
