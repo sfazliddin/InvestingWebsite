@@ -51,8 +51,8 @@ const GetInfo = () => {
                       <UpdateAccount
                         id={id}
                         email={email}
-                        userName={username}
-                        pass={password}
+                        username={username}
+                        password={password}
                       />
                     </Popup>
                   </div>
@@ -191,7 +191,8 @@ const CreateAccount = () => {
   );
 };
 
-const UpdateAccount = (id, email, username, password) => {
+// eslint-disable-next-line react/prop-types
+const UpdateAccount = ({ id, email, username, password }) => {
   const [currentEmail, setEmail] = useState(email);
   const [currentUsername, setUsername] = useState(username);
   const [currentPassword, setPassword] = useState(password);
@@ -226,11 +227,9 @@ const UpdateAccount = (id, email, username, password) => {
   const updateEmail = (e) => setEmail(e.target.value);
   const updateUsername = (e) => setUsername(e.target.value);
   const updatePassword = (e) => setPassword(e.target.value);
-  let responseOutput = <></>;
 
   return (
     <form onSubmit={submit}>
-      {responseOutput}
       <input type="email" value={currentEmail} onChange={updateEmail} />
       <input type="text" value={currentUsername} onChange={updateUsername} />
       <input
