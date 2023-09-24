@@ -34,8 +34,8 @@ const MyNavbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/crypto">
-                Crypto
+              <a className="nav-link" href="/numbers-facts">
+                Number Facts
               </a>
             </li>
             <li className="nav-item">

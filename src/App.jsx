@@ -5,10 +5,11 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Stocks from "./pages/Stocks";
-import Crypto from "./pages/Crypto";
+
 import MyNavbar from "./components/navbar";
 import Support from "./pages/Support";
 import { Container } from "react-bootstrap";
+import Numbers from "./pages/Numbers";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/stocks" element={<Stocks />} />
-          <Route path="/crypto" element={<Crypto />} />
+          <Route path="/numbers-facts" element={<Numbers />} />
           <Route path="/support" element={<Support />} />
         </Routes>
       </Container>
