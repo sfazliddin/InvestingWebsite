@@ -1,37 +1,33 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-const url = "https://numbersapi.p.rapidapi.com/random/trivia";
-// const randomFact = () => {
-//   const [fact, setFact] = useState("");
-//   // const [loading, setLoading] = useState(false);
-//   // const [error, setError] = useState(false);
-//   const getFact = async () => {
-//     // setLoading(true);
-//     // setError(false);
-//     const request = await axios.get(url);
-//     // setLoading(false);
-//     setFact(request.data);
-//   };
-//   // useEffect(()=>{
-//   //   getFact()
-//   // },[])
-// };
-
+import Popup from "reactjs-popup";
 const Numbers = () => {
   const [fact, setFact] = useState("");
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(false);
+  const [type, setType] = useState("math");
+
   const getFact = async () => {
-    // setLoading(true);
-    // setError(false);
-    const request = await axios.get(url);
-    // setLoading(false);
-    setFact(request.data);
+    // setType("year");
+    const url = `https://numbersapi.p.rapidapi.com/random/${type}`;
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "bc201214d3msh4a382f26a70841cp1eac53jsn45eb7afbd3bb",
+        "X-RapidAPI-Host": "numbersapi.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const result = await response.text();
+      setFact(result);
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   };
-  useEffect((fact) => {
+  useEffect(() => {
     getFact();
-    console.log(fact);
   }, []);
+
   return (
     <div>
       <h1>Number Facts</h1>
@@ -43,7 +39,41 @@ const Numbers = () => {
         different types are Date, Math, Trivia, and Year Facts. If you want you
         can get a random fact as well.
       </h6>
-      <button>Random Fact</button>
+      <Popup trigger={<button>Random Fact</button>}>
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown
+          </button>
+          <ul className="dropdown-menu">
+            <li>
+              <button className="dropdown-item" type="button">
+                Date
+              </button>
+            </li>
+            <li>
+              <button className="dropdown-item" type="button">
+                Math
+              </button>
+            </li>
+            <li>
+              <button className="dropdown-item" type="button">
+                Trivia
+              </button>
+            </li>
+            <li>
+              <button className="dropdown-item" type="button">
+                Year
+              </button>
+            </li>
+          </ul>
+        </div>
+      </Popup>
+      <button>Generate Random Fact</button>
       <button>Date Fact</button>
       <button>Math Fact</button>
       <button>Trivia Fact</button>
