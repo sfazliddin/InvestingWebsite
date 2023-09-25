@@ -1,22 +1,43 @@
 import { useEffect, useState } from "react";
+import { numbersKey, numbersUrl } from "../utils/numbersApi";
 import Popup from "reactjs-popup";
 const Numbers = () => {
   const [fact, setFact] = useState("");
-  const [type, setType] = useState("math");
+  const [type, setType] = useState("");
 
+  const setRandomFactType = () => {
+    const num = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+    switch (num) {
+      case 1:
+        setType("math");
+        console.log(num);
+        break;
+      case 2:
+        setType("trivia");
+        console.log(num);
+        break;
+      case 3:
+        setType("year");
+        console.log(num);
+        break;
+      case 4:
+        setType("date");
+        console.log(num);
+        break;
+    }
+  };
   const getFact = async () => {
-    // setType("year");
-    const url = `https://numbersapi.p.rapidapi.com/random/${type}`;
+    const url = `${numbersUrl}/random/${type}`;
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "bc201214d3msh4a382f26a70841cp1eac53jsn45eb7afbd3bb",
+        "X-RapidAPI-Key": numbersKey,
         "X-RapidAPI-Host": "numbersapi.p.rapidapi.com",
       },
     };
 
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url, options, type);
       const result = await response.text();
       setFact(result);
       console.log(result);
@@ -25,8 +46,9 @@ const Numbers = () => {
     }
   };
   useEffect(() => {
+    setRandomFactType();
     getFact();
-  }, []);
+  }, [type]);
 
   return (
     <div>
