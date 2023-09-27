@@ -95,7 +95,14 @@ const Numbers = () => {
           </ul>
         </div>
       </Popup>
-      <button>Generate Random Fact</button>
+      <button
+        onClick={(type) => {
+          setRandomFactType(type);
+          getFact;
+        }}
+      >
+        Generate Random Fact
+      </button>
       <button>Date Fact</button>
       <button>Math Fact</button>
       <button>Trivia Fact</button>
