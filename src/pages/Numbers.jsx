@@ -1,10 +1,21 @@
 import { useEffect, useState } from "react";
 import { numbersKey, numbersUrl } from "../utils/numbersApi";
-import Popup from "reactjs-popup";
+// import Popup from "reactjs-popup";
+import Select from "react-select";
+
 const Numbers = () => {
   const [fact, setFact] = useState("");
-  const [type, setType] = useState("");
-
+  const [type, setType] = useState("math");
+  const factTypes = [
+    { value: "math", label: "Math" },
+    { value: "trivia", label: "Trivia" },
+    { value: "date", label: "Date" },
+    { value: "year", label: "Year" },
+  ];
+  const handleChange = (selectedOption) => {
+    setType(selectedOption);
+    console.log(`Option selected:`, selectedOption);
+  };
   const setRandomFactType = () => {
     const num = Math.floor(Math.random() * (4 - 1 + 1) + 1);
     switch (num) {
@@ -27,7 +38,7 @@ const Numbers = () => {
     }
   };
   const getFact = async () => {
-    const url = `${numbersUrl}/random/${type}`;
+    const url = `${numbersUrl}/random/${type.value}`;
     const options = {
       method: "GET",
       headers: {
@@ -46,14 +57,32 @@ const Numbers = () => {
     }
   };
   useEffect(() => {
-    setRandomFactType();
     getFact();
+    handleChange();
   }, [type]);
 
   return (
     <div>
       <h1>Number Facts</h1>
+      <div className="container">
+        <div className="mt-5 m-auto w-50">
+          <Select
+            options={factTypes}
+            onChange={handleChange}
+            autoFocus={true}
+            // styles={customStyles}
+          />
 
+          <div className="mt-4">
+            {type && (
+              <>
+                <p>You've selected {type.label}</p>
+                <h4>{fact}</h4>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
       <p>{fact}</p>
       <h4>About:</h4>
       <h6>
@@ -61,8 +90,8 @@ const Numbers = () => {
         different types are Date, Math, Trivia, and Year Facts. If you want you
         can get a random fact as well.
       </h6>
-      <Popup trigger={<button>Random Fact</button>}>
-        <div className="dropdown">
+      {/* <Popup trigger={<button>Random Fact Type</button>}>
+        <div className="dropdown" id="factTypes">
           <button
             className="btn btn-secondary dropdown-toggle"
             type="button"
@@ -73,31 +102,45 @@ const Numbers = () => {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <button className="dropdown-item" type="button">
-                Date
+              {" "}
+              <button
+                id="randomFactType"
+                className="dropdown-item"
+                type="button"
+              >
+                <option value={"random"}>Random</option>
               </button>
             </li>
             <li>
-              <button className="dropdown-item" type="button">
-                Math
+              {" "}
+              <button id="dateFactType" className="dropdown-item" type="button">
+                <option value={"date"}>Date</option>
               </button>
             </li>
             <li>
-              <button className="dropdown-item" type="button">
-                Trivia
+              <button id="mathFactType" className="dropdown-item" type="button">
+                <option value={"math"}>Math</option>
               </button>
             </li>
             <li>
-              <button className="dropdown-item" type="button">
-                Year
+              <button
+                id="triviaFactType"
+                className="dropdown-item"
+                type="button"
+              >
+                <option value={"trivia"}>Trivia</option>
+              </button>
+            </li>
+            <li>
+              <button id="yearFactType" className="dropdown-item" type="button">
+                <option value={"year"}>Year</option>
               </button>
             </li>
           </ul>
         </div>
-      </Popup>
+      </Popup> */}
       <button
-        onClick={(type) => {
-          setRandomFactType(type);
+        onClick={() => {
           getFact;
         }}
       >
