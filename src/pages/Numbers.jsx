@@ -1,4 +1,4 @@
-import { RandomFact } from "../components/NumberFactsFunctions";
+import { DateFact, RandomFact } from "../components/NumberFactsFunctions";
 
 const Numbers = () => {
   return (
@@ -13,6 +13,7 @@ const Numbers = () => {
       <h3>Select a fact category to get a random fact from it</h3>
       <RandomFact />
 
+      <DateFact />
       <button>Date Fact</button>
       <button>Math Fact</button>
       <button>Trivia Fact</button>
