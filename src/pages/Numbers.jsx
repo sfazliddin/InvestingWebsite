@@ -1,4 +1,10 @@
-import { DateFact, RandomFact } from "../components/NumberFactsFunctions";
+import {
+  DateFact,
+  MathFact,
+  RandomFact,
+  TriviaFact,
+  YearFact,
+} from "../components/NumberFactsFunctions";
 
 const Numbers = () => {
   return (
@@ -14,7 +20,9 @@ const Numbers = () => {
       <RandomFact />
 
       <DateFact />
-      <button>Date Fact</button>
+      <MathFact />
+      <TriviaFact />
+      <YearFact />
       <button>Math Fact</button>
       <button>Trivia Fact</button>
       <button>Year Fact</button>

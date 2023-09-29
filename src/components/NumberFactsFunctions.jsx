@@ -94,34 +94,249 @@ const DateFact = () => {
     <>
       <form onSubmit={submit}>
         {responseOutput}
-        <div>
-          <input
-            required
-            type="number"
-            id="month"
-            value={month}
-            onChange={updateMonth}
-          />
-          <label htmlFor="month">Month</label>
+        <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+          <div className="form-floating p-1 my-1">
+            <input
+              required
+              type="number"
+              className="form-control"
+              id="month"
+              value={month}
+              onChange={updateMonth}
+            />
+            <label htmlFor="month" className="ps-3">
+              Month
+            </label>
+          </div>
+          <div className="form-floating p-1 my-1">
+            <input
+              required
+              type="number"
+              className="form-control"
+              id="day"
+              value={day}
+              onChange={updateDay}
+            />
+            <label htmlFor="day" className="ps-3">
+              Day
+            </label>
+          </div>
+          <button
+            type="submit"
+            className="btn btn-lg btn-dark col-6 mx-auto m-2"
+          >
+            get date fact
+          </button>
+
+          <h4>{dateFact}</h4>
         </div>
-        <div>
-          <input
-            required
-            type="number"
-            id="day"
-            value={day}
-            onChange={updateDay}
-          />
-          <label htmlFor="day">Day</label>
-        </div>
-        <button type="submit">get date fact</button>
       </form>
-      <h4>{dateFact}</h4>
     </>
   );
 };
-const MathFact = () => {};
-const TriviaFact = () => {};
-const YearFact = () => {};
+const MathFact = () => {
+  const [number, setNumber] = useState(null);
+  const [mathFact, setMathFact] = useState(null);
+  const getMathFact = async () => {
+    const mathUrl = `${url}/${number}/math`;
+    const options = {
+      method: "GET",
+
+      headers: {
+        "X-RapidAPI-Key": numbersKey,
+        "X-RapidAPI-Host": numbersHost,
+      },
+    };
+
+    try {
+      const response = await fetch(mathUrl, options);
+      const result = await response.text();
+      console.log(result);
+      setMathFact(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const submit = async (e) => {
+    e.preventDefault();
+    try {
+      const isNumber = !null;
+
+      isNumber ? getMathFact() : alert("Please Put in a Valid Number");
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  const updateNumber = (e) => setNumber(e.target.value);
+  let responseOutput = <></>;
+
+  return (
+    <>
+      <form onSubmit={submit}>
+        {responseOutput}
+        <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+          <div className="form-floating p-1 my-1">
+            <input
+              required
+              type="number"
+              className="form-control"
+              id="number"
+              value={number}
+              onChange={updateNumber}
+            />
+            <label htmlFor="month" className="ps-3">
+              Number
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-lg btn-dark col-6 mx-auto m-2"
+          >
+            get math fact
+          </button>
+
+          <h4>{mathFact}</h4>
+        </div>
+      </form>
+    </>
+  );
+};
+const TriviaFact = () => {
+  const [number, setNumber] = useState(null);
+  const [triviaFact, setTriviaFact] = useState(null);
+  const getTriviaFact = async () => {
+    const triviaUrl = `${url}/${number}/trivia`;
+    const options = {
+      method: "GET",
+
+      headers: {
+        "X-RapidAPI-Key": numbersKey,
+        "X-RapidAPI-Host": numbersHost,
+      },
+    };
+
+    try {
+      const response = await fetch(triviaUrl, options);
+      const result = await response.text();
+      console.log(result);
+      setTriviaFact(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const submit = async (e) => {
+    e.preventDefault();
+    try {
+      const isNumber = !null;
+
+      isNumber ? getTriviaFact() : alert("Please Put in a Valid Number");
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  const updateNumber = (e) => setNumber(e.target.value);
+  let responseOutput = <></>;
+
+  return (
+    <>
+      <form onSubmit={submit}>
+        {responseOutput}
+        <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+          <div className="form-floating p-1 my-1">
+            <input
+              required
+              type="number"
+              className="form-control"
+              id="number"
+              value={number}
+              onChange={updateNumber}
+            />
+            <label htmlFor="month" className="ps-3">
+              Number
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-lg btn-dark col-6 mx-auto m-2"
+          >
+            get trivia fact
+          </button>
+
+          <h4>{triviaFact}</h4>
+        </div>
+      </form>
+    </>
+  );
+};
+const YearFact = () => {
+  const [number, setNumber] = useState(null);
+  const [yearFact, setYearFact] = useState(null);
+  const getYearFact = async () => {
+    const yearUrl = `${url}/${number}/year`;
+    const options = {
+      method: "GET",
+
+      headers: {
+        "X-RapidAPI-Key": numbersKey,
+        "X-RapidAPI-Host": numbersHost,
+      },
+    };
+
+    try {
+      const response = await fetch(yearUrl, options);
+      const result = await response.text();
+      console.log(result);
+      setYearFact(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const submit = async (e) => {
+    e.preventDefault();
+    try {
+      const isNumber = !null;
+
+      isNumber ? getYearFact() : alert("Please Put in a Valid Year");
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  const updateNumber = (e) => setNumber(e.target.value);
+  let responseOutput = <></>;
+
+  return (
+    <>
+      <form onSubmit={submit}>
+        {responseOutput}
+        <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+          <div className="form-floating p-1 my-1">
+            <input
+              required
+              type="number"
+              className="form-control"
+              id="number"
+              value={number}
+              onChange={updateNumber}
+            />
+            <label htmlFor="month" className="ps-3">
+              Year
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-lg btn-dark col-6 mx-auto m-2"
+          >
+            get year fact
+          </button>
+
+          <h4>{yearFact}</h4>
+        </div>
+      </form>
+    </>
+  );
+};
 
 export { RandomFact, DateFact, MathFact, TriviaFact, YearFact };
