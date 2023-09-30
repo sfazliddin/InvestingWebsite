@@ -1,11 +1,8 @@
-import {
-  DateFact,
-  MathFact,
-  RandomFact,
-  TriviaFact,
-  YearFact,
-} from "../components/NumberFactsFunctions";
-
+import RandomFact from "../components/FactRandom";
+import MathFact from "../components/FactMath";
+import TriviaFact from "../components/FactTrivia";
+import DateFact from "../components/FactDate";
+import YearFact from "../components/FactYear";
 const Numbers = () => {
   return (
     <div>
