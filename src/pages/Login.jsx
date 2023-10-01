@@ -6,7 +6,7 @@ const Login = () => {
     <div className="d-flex justify-content-center flex-column">
       <div className="col-12 text-center my-3">
         <h1 className="my-3">
-          <strong>Invest IQ</strong> Login
+          <strong>API Fun</strong> Login
         </h1>
       </div>
       <div className="credentials bg-primary col-10 col-md-8 col-lg-6 rounded p-2 mx-auto mb-5">

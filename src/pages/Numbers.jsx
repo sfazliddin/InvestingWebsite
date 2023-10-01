@@ -20,33 +20,7 @@ const Numbers = () => {
       <MathFact />
       <TriviaFact />
       <YearFact />
-      <button>Math Fact</button>
-      <button>Trivia Fact</button>
-      <button>Year Fact</button>
     </div>
   );
 };
 export default Numbers;
-
-//the following function is to randomize the fact type
-// const setRandomFactType = () => {
-//   const num = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-//   switch (num) {
-//     case 1:
-//       setType("math");
-//       console.log(num);
-//       break;
-//     case 2:
-//       setType("trivia");
-//       console.log(num);
-//       break;
-//     case 3:
-//       setType("year");
-//       console.log(num);
-//       break;
-//     case 4:
-//       setType("date");
-//       console.log(num);
-//       break;
-//   }
-// };

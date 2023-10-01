@@ -51,7 +51,7 @@ const Register = () => {
     <div className="d-flex justify-content-center flex-column">
       <div className="col-12 my-3 text-center">
         <h1 className="my-3">
-          <strong>Invest IQ</strong> Sign up
+          <strong>API Fun</strong> Sign up
         </h1>
       </div>
       <form onSubmit={submit}>
