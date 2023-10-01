@@ -1,36 +1,46 @@
-import { RegisterButton } from "../components/buttons";
+/* eslint-disable react/no-unescaped-entities */
+
 const Home = () => {
   return (
     <>
-      <h3>Welcome to Invest IQ - Your Path to Smart Investing</h3>
-      <h3>Discover. Trade. Grow.</h3>
-      <h3>Why Choose Invest IQ?</h3>
+      <div className="d-flex justify-content-center">
+        <h1>
+          <b>Welcome to API Fun </b>
+        </h1>
+      </div>
+      <h3 className="d-flex justify-content-center">
+        Facts. Statistics. Weather. More.
+      </h3>
+      <h3>What's This Website About?</h3>
       <ul>
         <li>
-          <b>Realistic Simulation:</b> Practice trading with real market data in
-          a risk-free environment.
+          <b>API Fun:</b> Enjoy the API's I found to either get Facts about
+          numbers or NBA Statistics, weather information, and anything else I've
+          added.
         </li>
         <li>
-          <b>Educational Resources:</b> Access a wealth of learning materials to
-          boost your investment knowledge.
+          <a href="/numbers-facts">
+            <b>Number Facts:</b>
+          </a>
+          In this section of the website, you can get Trivia or Math facts about
+          a number, or facts about a Date or Year.
         </li>
         <li>
-          <b>Community Engagement:</b> Connect with fellow investors, share
-          strategies, and learn from experts.
+          <b>NBA Stats*:</b> In this section you can get season or all time
+          statistics about the NBA whether it is related to a player or team.
         </li>
         <li>
-          <b>Competitions:</b> Join trading competitions to put your skills to
-          the test and win prizes.
+          <b>Weather*:</b> Get weather data where you are located or anywhere
+          else in the world. You can get history of weather data in a specific
+          area.
         </li>
-        <li>
+        {/* <li>
           <b>User-Friendly Interface:</b> Our platform is intuitive and easy to
           use, making it suitable for traders of all levels.
-        </li>
+        </li> */}
       </ul>
 
-      <h2>Start Your Investment Journey Today!</h2>
-      <h2>Get Started for Free</h2>
-      <RegisterButton />
+      <small>*Page is not available yet</small>
     </>
   );
 };
