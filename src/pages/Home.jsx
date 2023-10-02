@@ -19,9 +19,9 @@ const Home = () => {
           added.
         </li>
         <li>
-          <a href="/numbers-facts">
-            <b>Number Facts:</b>
-          </a>
+          <b>
+            <a href="/numbers-facts">Number Facts:</a>
+          </b>
           In this section of the website, you can get Trivia or Math facts about
           a number, or facts about a Date or Year.
         </li>

@@ -42,15 +42,14 @@ const RandomFact = () => {
   return (
     <>
       <div className="container">
-        <div className="mt-5 m-auto w-50 " style={{ zIndex: 100 }}>
+        <div className="mt-5 m-auto w-10 ">
           <Select
             options={factTypes}
             onChange={handleChange}
             autoFocus={true}
             placeholder="Pick a Fact Type"
-            style={{ zIndex: 100 }}
           />
-          <p>{fact}</p>
+          <h4>{fact}</h4>
         </div>
       </div>
     </>
