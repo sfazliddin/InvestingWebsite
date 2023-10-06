@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { numbersHost, numbersKey, numbersUrl } from "../utils/numbersApi";
+
 const MathFact = () => {
   const [number, setNumber] = useState(null);
   const [mathFact, setMathFact] = useState(null);
+
   const getMathFact = async () => {
     const mathUrl = `${numbersUrl}/${number}/math`;
     const options = {
@@ -41,7 +43,7 @@ const MathFact = () => {
     <>
       <form onSubmit={submit}>
         {responseOutput}
-        <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
           <div className="form-floating p-1 my-1">
             <input
               required
@@ -58,9 +60,9 @@ const MathFact = () => {
 
           <button
             type="submit"
-            className="btn btn-lg btn-dark col-6 mx-auto m-2"
+            className="btn btn-lg btn-dark col-8 mx-auto m-2"
           >
-            get math fact
+            Get Math Fact
           </button>
 
           <h4>{mathFact}</h4>

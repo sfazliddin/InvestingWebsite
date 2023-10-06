@@ -2,9 +2,13 @@
 import { useState } from "react";
 import { numbersHost, numbersKey, numbersUrl } from "../utils/numbersApi";
 const DateFact = () => {
-  const [month, setMonth] = useState(null);
-  const [day, setDay] = useState(null);
+  const [month, setMonth] = useState("");
+  const [day, setDay] = useState("");
   const [dateFact, setDateFact] = useState(null);
+  // const Fact = {
+  //   fact: "date fact",
+  //   time: Date.now(),
+  // };
   const getDateFact = async () => {
     const dateUrl = `${numbersUrl}/${month}/${day}/date`;
     const options = {
@@ -41,7 +45,7 @@ const DateFact = () => {
     <>
       <form onSubmit={submit}>
         {responseOutput}
-        <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
           <div className="form-floating p-1 my-1">
             <input
               required
@@ -70,9 +74,9 @@ const DateFact = () => {
           </div>
           <button
             type="submit"
-            className="btn btn-lg btn-dark col-6 mx-auto m-2"
+            className="btn btn-lg btn-dark col-5 mx-auto m-2"
           >
-            get date fact
+            Get Date Fact
           </button>
 
           <h4>{dateFact}</h4>

@@ -6,15 +6,15 @@ const HexagonContainer = ({ children }) => {
   return (
     <>
       <Hexagon
+        className="col"
         fill="green"
         stroke="black"
         strokeWidth={4}
         radius={10}
-        side={200}
+        height={500}
+        flatTop="true"
       >
-        <div>
-          <div>{children}</div>
-        </div>
+        {children}
       </Hexagon>
     </>
   );

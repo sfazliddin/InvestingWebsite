@@ -1,10 +1,15 @@
-import HexagonContainer from "../components/HexagonContainer";
+import HexagonGrid from "react-svg-hexagon-grid";
 
 const Stocks = () => {
   return (
-    <div>
-      <HexagonContainer>hello</HexagonContainer>
-    </div>
+    <>
+      {/* <div className="row">
+        <div className="col">
+          {" "}
+          <Hexagon>hello</Hexagon>
+        </div>
+      </div> */}
+    </>
   );
 };
 export default Stocks;
