@@ -9,37 +9,45 @@ const Home = () => {
         </h1>
       </div>
       <h3 className="d-flex justify-content-center">
-        Facts. Statistics. Weather. More.
+        Facts. Jokes. Conversion. More.
       </h3>
       <h3>What's This Website About?</h3>
+      <h4>
+        <b>API Fun-</b> Enjoy the API's I found that you can have some fun
+        playing around with or get something informational
+      </h4>
       <ul>
-        <li>
-          <b>API Fun:</b> Enjoy the API's I found to either get Facts about
-          numbers or NBA Statistics, weather information, and anything else I've
-          added.
-        </li>
         <li>
           <b>
             <a href="/numbers-facts">Number Facts:</a>
-          </b>
+          </b>{" "}
           In this section of the website, you can get Trivia or Math facts about
           a number, or facts about a Date or Year.
         </li>
         <li>
-          <b>NBA Stats*:</b> In this section you can get season or all time
-          statistics about the NBA whether it is related to a player or team.
+          <b>
+            *<a href="/text2speech">Text to Speech:</a>
+          </b>{" "}
+          Input text to get verbal representation of a textual content.
         </li>
         <li>
-          <b>Weather*:</b> Get weather data where you are located or anywhere
-          else in the world. You can get history of weather data in a specific
-          area.
+          <b>
+            *<a href="/chuck-norris">Chuck Norris:</a>
+          </b>{" "}
+          In this section you can get facts or jokes about the Legendary Chuck
+          Norris.
+        </li>
+        <li>
+          <b>
+            *<a href="urban-dictionary">Urban Dictionary:</a>
+          </b>{" "}
+          Get the translation of modern vocabulary.
         </li>
         {/* <li>
           <b>User-Friendly Interface:</b> Our platform is intuitive and easy to
           use, making it suitable for traders of all levels.
         </li> */}
       </ul>
-
       <small>*Page is not available yet</small>
     </>
   );

@@ -4,7 +4,7 @@ const SendEmail = () => {
     <>
       <div>
         <form onSubmit={submit}>
-          <div className="col-10 col-md-8 col-lg-6 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+          <div className="col-10 col-md-8 col-lg-10 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
             <div className="form-floating p-1 my-1">
               <input
                 required
@@ -44,7 +44,9 @@ const SendEmail = () => {
             <div className="form-floating p-1 my-auto form-group">
               <textarea
                 className="form-control"
+                type="text"
                 id="message"
+                placeholder="message"
                 rows="5"
               ></textarea>
               <label htmlFor="message" className="ps-3">
