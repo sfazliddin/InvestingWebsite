@@ -7,14 +7,16 @@ import YearFact from "../components/FactYear";
 const Numbers = () => {
   return (
     <div>
-      <h1>Number Facts</h1>
+      <div className="container ">
+        <h1 className="d-flex justify-content-center">Number Facts</h1>
 
-      <h4>About:</h4>
-      <h6>
-        In this page you can get facts about different kinds of numbers. The
-        different types are Date, Math, Trivia, and Year Facts. If you want you
-        can get a random fact as well.
-      </h6>
+        <h4>About:</h4>
+        <h6>
+          In this page you can get facts about different kinds of numbers. The
+          different types are Date, Math, Trivia, and Year Facts. If you want
+          you can get a random fact as well.
+        </h6>
+      </div>
       <div className="row">
         <div className="col">
           <RandomFact />
@@ -23,7 +25,7 @@ const Numbers = () => {
           <DateFact />
         </div>
       </div>
-      <div className="row"> </div>
+
       <div className="row">
         <div className="col">
           <MathFact />

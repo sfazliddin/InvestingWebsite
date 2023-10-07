@@ -4,12 +4,14 @@ import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Stocks from "./pages/Stocks";
-
+import Text2Speech from "./pages/Text2Speech";
 import MyNavbar from "./components/navbar";
 import Support from "./pages/Support";
 import { Container } from "react-bootstrap";
 import Numbers from "./pages/Numbers";
+import NotFound from "./pages/NotFound";
+import ChuckNorris from "./pages/ChuckNorris";
+import UrbanDictionary from "./pages/UrbanDictionary";
 
 function App() {
   return (
@@ -20,9 +22,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/stocks" element={<Stocks />} />
+          <Route path="/text2speech" element={<Text2Speech />} />
           <Route path="/numbers-facts" element={<Numbers />} />
+          <Route path="/chuck-norris" element={<ChuckNorris />} />
+          <Route path="/urban-dictionary" element={<UrbanDictionary />} />
           <Route path="/support" element={<Support />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
     </>
