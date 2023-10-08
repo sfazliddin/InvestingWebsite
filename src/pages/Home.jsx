@@ -7,12 +7,8 @@ const Home = () => {
         <h1>
           <b>Welcome to API Fun </b>
         </h1>
-        <br />
-        <h3>
-          Here is the code for my{" "}
-          <a href="https://github.com/sfazliddin/ApiFun/tree/main"> project</a>
-        </h3>
       </div>
+
       <h3 className="d-flex justify-content-center">
         Facts. Jokes. Conversion. More.
       </h3>
