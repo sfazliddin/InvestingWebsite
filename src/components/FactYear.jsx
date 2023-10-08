@@ -41,7 +41,7 @@ const YearFact = () => {
     <>
       <form onSubmit={submit}>
         {responseOutput}
-        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-info rounded p-2 mb-5">
           <div className="form-floating p-1 my-1">
             <input
               required
@@ -58,12 +58,12 @@ const YearFact = () => {
 
           <button
             type="submit"
-            className="btn btn-lg btn-dark col-8 mx-auto m-2"
+            className="btn btn-lg btn-dark col-8 mx-auto m-2 text-info-emphasis"
           >
             Get Year Fact
           </button>
 
-          <h4>{yearFact}</h4>
+          <h4 className="text-light">{yearFact}</h4>
         </div>
       </form>
     </>

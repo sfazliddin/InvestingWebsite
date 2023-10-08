@@ -4,7 +4,7 @@ const SendEmail = () => {
     <>
       <div>
         <form onSubmit={submit}>
-          <div className="col-10 col-md-8 col-lg-10 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+          <div className="col-10 col-md-8 col-lg-10 d-flex flex-column mx-auto bg-secondary rounded p-2 mb-5">
             <div className="form-floating p-1 my-1">
               <input
                 required
@@ -55,7 +55,7 @@ const SendEmail = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-lg btn-dark col-6 mx-auto m-2"
+              className="btn btn-lg btn-outline-secondary col-6 mx-auto m-2"
             >
               Send Message
             </button>

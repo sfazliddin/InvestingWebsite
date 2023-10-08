@@ -45,7 +45,7 @@ const DateFact = () => {
     <>
       <form onSubmit={submit}>
         {responseOutput}
-        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-primary rounded p-2 mb-5">
+        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-info rounded p-2 mb-5">
           <div className="form-floating p-1 my-1">
             <input
               required
@@ -74,12 +74,12 @@ const DateFact = () => {
           </div>
           <button
             type="submit"
-            className="btn btn-lg btn-dark col-5 mx-auto m-2"
+            className="btn btn-lg btn-dark col-5 mx-auto m-2 text-info-emphasis"
           >
             Get Date Fact
           </button>
 
-          <h4>{dateFact}</h4>
+          <h4 className="text-light">{dateFact}</h4>
         </div>
       </form>
     </>

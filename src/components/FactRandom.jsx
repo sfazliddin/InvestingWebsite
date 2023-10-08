@@ -41,16 +41,16 @@ const RandomFact = () => {
 
   return (
     <>
-      <div className="container col-10 col-md-8 col-lg-8 bg-primary rounded py-4 d-flex flex-column mt-5">
+      <div className="container col-10 col-md-8 col-lg-8 bg-info rounded py-4 d-flex flex-column mt-5">
         <div className=" w-10 ">
-          <h4>Get A Random Fact</h4>
+          <h4 className="text-secondary">Get A Random Fact</h4>
           <Select
             options={factTypes}
             onChange={handleChange}
             autoFocus={true}
             placeholder="Pick a Fact Type"
           />
-          <h4>{fact}</h4>
+          <h4 className="text-light">{fact}</h4>
         </div>
       </div>
     </>

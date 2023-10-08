@@ -55,8 +55,8 @@ const MyNavbar = () => {
             </li>
           </ul>
 
-          <LoginButton />
-          <RegisterButton />
+          {/* <LoginButton />
+          <RegisterButton /> */}
         </div>
       </div>
     </nav>
