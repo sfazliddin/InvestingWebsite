@@ -5,7 +5,7 @@ const ChuckNorris = () => {
     <>
       <Container>
         <h1 className="d-flex justify-content-center">Chuck Norris</h1>
-        <h2>TEST</h2>
+        {/* <h2>TEST</h2> */}
         <UnderConstruction />
       </Container>
     </>
