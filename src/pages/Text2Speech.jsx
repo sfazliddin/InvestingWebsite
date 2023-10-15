@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import ToAudio from "../components/ToAudio";
 import UnderConstruction from "../components/UnderConstruction";
 
 const Text2Speech = () => {
@@ -6,7 +7,7 @@ const Text2Speech = () => {
     <>
       <Container>
         <h1 className="d-flex justify-content-center">Text to Speech</h1>
-        <h2>new test2</h2>
+        <ToAudio />
         <UnderConstruction />
       </Container>
     </>

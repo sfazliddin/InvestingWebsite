@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
-import { numbersHost, numbersKey, numbersUrl } from "../utils/numbersApi";
-
+import { numbersHost, rapidApiKey, numbersUrl } from "../utils/rapidApi";
 const TriviaFact = () => {
   const [number, setNumber] = useState(null);
   const [triviaFact, setTriviaFact] = useState(null);
@@ -11,7 +10,7 @@ const TriviaFact = () => {
       method: "GET",
 
       headers: {
-        "X-RapidAPI-Key": numbersKey,
+        "X-RapidAPI-Key": rapidApiKey,
         "X-RapidAPI-Host": numbersHost,
       },
     };

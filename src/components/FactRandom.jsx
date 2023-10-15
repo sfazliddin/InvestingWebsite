@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
-import { numbersHost, numbersKey, numbersUrl } from "../utils/numbersApi";
+import { numbersHost, rapidApiKey, numbersUrl } from "../utils/rapidApi";
 import Select from "react-select";
 
 const RandomFact = () => {
@@ -21,7 +21,7 @@ const RandomFact = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": numbersKey,
+        "X-RapidAPI-Key": rapidApiKey,
         "X-RapidAPI-Host": numbersHost,
       },
     };
