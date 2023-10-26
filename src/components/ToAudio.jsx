@@ -5,7 +5,10 @@ import {
   text2speechUrl,
 } from "../utils/rapidApi";
 
+import VoiceRSSWebApi from "../../node_modules/voice-rss/src/voice-rss-api";
+
 const ToAudio = () => {
+  const VoiceRSS = new VoiceRSSWebApi(text2speechKey);
   const getAudio = async () => {
     const url = `${text2speechUrl}/?key=${text2speechKey}`;
     const options = {
@@ -29,6 +32,15 @@ const ToAudio = () => {
       console.error(error);
     }
   };
+  (async () => {
+    const audio = await VoiceRSS.getAudio("Hello World");
+
+    // play the audio
+    new Audio(audio).play();
+
+    // OR console log the audio (base64 encoding)
+    console.log(audio);
+  })();
   return (
     <>
       <div>
