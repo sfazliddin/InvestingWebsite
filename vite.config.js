@@ -10,7 +10,9 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env.NUMBERS_API_KEY': JSON.stringify(env.NUMBERS_API_KEY),
       'process.env.NUMBERS_API_URL': JSON.stringify(env.NUMBERS_API_URL),
-      'process.env.NUMBERS_API_HOST': JSON.stringify(env.NUMBERS_API_HOST)
+      'process.env.NUMBERS_API_HOST': JSON.stringify(env.NUMBERS_API_HOST),
+      'process.env.CHUCK_NORRIS_HOST': JSON.stringify(env.CHUCK_NORRIS_HOST),
+      'process.env.CHUCK_NORRIS_URL': JSON.stringify(env.CHUCK_NORRIS_URL),
     },
     plugins: [react()],
   }
