@@ -6,8 +6,8 @@ import YearFact from "../components/FactYear";
 
 const Numbers = () => {
   return (
-    <div>
-      <div className="container ">
+    <div id="numbersPage">
+      <div className="container mb-5">
         <h1 className="d-flex justify-content-center">Number Facts</h1>
 
         <h4>About:</h4>
@@ -18,25 +18,11 @@ const Numbers = () => {
         </h6>
       </div>
       <div className="row">
-        <div className="col">
-          <RandomFact />
-        </div>{" "}
-        <div className="col">
-          <DateFact />
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col">
-          <MathFact />
-        </div>{" "}
-        <div className="col">
-          {" "}
-          <TriviaFact />
-        </div>
-        <div className="col">
-          <YearFact />
-        </div>
+        <RandomFact />
+        <DateFact />
+        <MathFact />
+        <TriviaFact />
+        <YearFact />
       </div>
     </div>
   );

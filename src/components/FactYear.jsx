@@ -41,7 +41,7 @@ const YearFact = () => {
     <>
       <form onSubmit={submit}>
         {responseOutput}
-        <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-info rounded p-2 mb-5">
+        <div className=" col-md-8 d-flex flex-column mx-auto bg-info rounded p-2 mb-5">
           <div className="form-floating p-1 my-1">
             <input
               required
