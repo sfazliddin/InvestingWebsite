@@ -5,10 +5,7 @@ const DateFact = () => {
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
   const [dateFact, setDateFact] = useState(null);
-  // const Fact = {
-  //   fact: "date fact",
-  //   time: Date.now(),
-  // };
+
   const getDateFact = async () => {
     const dateUrl = `${numbersUrl}/${month}/${day}/date`;
     const options = {

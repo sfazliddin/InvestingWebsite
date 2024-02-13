@@ -41,8 +41,8 @@ const RandomFact = () => {
 
   return (
     <>
-      <div className="container col-10 col-md-8 col-lg-8 bg-info rounded py-4 d-flex flex-column mt-5">
-        <div className=" w-10 ">
+      <div className="col-10 col-md-8 col-lg-8 d-flex flex-column mx-auto bg-info rounded p-3 mb-5">
+        <div className=" w-1 ">
           <h4 className="text-secondary">Get A Random Fact</h4>
           <Select
             options={factTypes}
